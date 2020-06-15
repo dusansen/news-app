@@ -15,7 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint-fix": "eslint --fix --ext .js,.jsx --ignore-path .gitignore ."
+    "lint-fix": "eslint --fix --ext .js,.jsx --ignore-path .gitignore .",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "browserslist": {
     "production": [
@@ -30,6 +32,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest-enzyme": "^7.1.2"
