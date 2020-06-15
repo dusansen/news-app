@@ -6,8 +6,15 @@ const NavLink = props => (
     {...props}
     getProps={({ isCurrent }) => ({
       style: {
-        backgroundColor: isCurrent ? '#FF5D73' : 'inherit',
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        height: '100%',
+        minWidth: '150px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: '500',
+        backgroundColor: isCurrent ? 'var(--nav-link-bg-color)' : 'inherit',
+        textDecoration: 'none'
       }
     })}
   />
