@@ -2,7 +2,9 @@
   --primary-bg-color: #FFFFFF;
   --secondary-bg-color: #494949;
   --primary-text-color: #000000;
+  --secondary-text-color: #FFFFFF;
   --nav-link-bg-color: #FF5D73;
+  --nav-link-bg-hover-color: #FF8595;
 }
 
 body {
@@ -20,4 +22,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.nav-link {
+  color: var(--secondary-text-color);
+  height: 100%;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: var(--nav-link-bg-hover-color) !important;
 }
