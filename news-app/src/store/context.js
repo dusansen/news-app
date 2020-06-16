@@ -1,8 +1,9 @@
 import React, { createContext, useReducer, useContext } from 'react';
 import { reducer } from './reducer';
+import { COUNTRIES } from '../utils/constants';
 
 const initialState = {
-  country: {}
+  country: COUNTRIES[0]
 };
 
 const context = createContext(initialState);

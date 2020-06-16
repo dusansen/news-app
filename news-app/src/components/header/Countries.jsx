@@ -2,17 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Country from './Country';
 import { useAppContext } from '../../store/context';
-
-const COUNTRIES = [
-  {
-    label: 'Great Britain',
-    value: 'GB'
-  },
-  {
-    label: 'United States',
-    value: 'US'
-  }
-];
+import { COUNTRIES } from '../../utils/constants';
 
 const Countries = () => {
   const { state: { country } } = useAppContext();
