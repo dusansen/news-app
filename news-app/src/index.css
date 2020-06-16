@@ -38,3 +38,7 @@ code {
 .nav-link:hover {
   background-color: var(--nav-link-bg-hover-color) !important;
 }
+
+.selected-country {
+  background-color: var(--nav-link-bg-color);
+};

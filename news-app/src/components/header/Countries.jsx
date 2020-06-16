@@ -1,22 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import Country from './Country';
+import { useAppContext } from '../../store/context';
 
 const COUNTRIES = [
   {
-    label: 'GB',
+    label: 'Great Britain',
     value: 'GB'
   },
   {
-    label: 'US',
+    label: 'United States',
     value: 'US'
   }
 ];
 
 const Countries = () => {
+  const { state: { country } } = useAppContext();
+
   return (
     <StyledWrapper>
-      {COUNTRIES.map(c => <Country key={c.value} country={c} />)}
+      {COUNTRIES.map(c => <Country key={c.value} country={c} selected={country.value === c.value} />)}
     </StyledWrapper>
   );
 };

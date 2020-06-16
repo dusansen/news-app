@@ -1,10 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useAppContext } from '../../store/context';
+import { SET_COUNTRY } from '../../store/constants';
 
-const Country = ({ country: { label, value } }) => {
+const Country = ({ country, selected }) => {
+  const { dispatch } = useAppContext();
+
+  const handleClick = () => {
+    dispatch({ type: SET_COUNTRY, payload: country })
+  };
+
   return (
-    <StyledWrapper>
-      {label}
+    <StyledWrapper
+      className={`${selected ? 'selected-country' : ''}`}
+      onClick={handleClick}>
+      {country.value}
     </StyledWrapper>
   );
 };
