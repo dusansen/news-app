@@ -2,33 +2,22 @@ import React, { useEffect } from 'react';
 import { useAppContext } from '../store/context';
 import useApi from '../hooks/useApi';
 import styled from 'styled-components';
-import Grid from '../components/articles/Grid';
+import { TOP_ARTICLES_CATEGORY } from '../utils/constants';
+import ShowArticles from '../components/articles/ShowArticles';
 
 const TopNews = () => {
-  const { state: { country, articles } } = useAppContext();
+  const { state: { country } } = useAppContext();
   const { getArticles } = useApi();
 
   useEffect(() => {
     getArticles({ country: country.value });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [country]);
-
-  const renderArticlesGrid = () => {
-    if (!articles.all) {
-      return null;
-    }
-    if (articles.all.loading) {
-      return <div>LOADING</div>;
-    }
-    if (articles.all.data && articles.all.data.length) {
-      return <Grid articles={articles.all.data} />;
-    }
-    return <h3>NO RESULTS</h3>;
-  };
 
   return (
     <StyledWrapper>
       <div className='page-title'>Top news from {country.label}</div>
-      {renderArticlesGrid()}
+      <ShowArticles category={TOP_ARTICLES_CATEGORY} />
     </StyledWrapper>
   );
 };

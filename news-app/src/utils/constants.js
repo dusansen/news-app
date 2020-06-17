@@ -8,3 +8,6 @@ export const COUNTRIES = [
     value: 'US'
   }
 ];
+
+export const TOP_ARTICLES_CATEGORY = 'top';
+export const SEARCH_CATEGORY = 'search';

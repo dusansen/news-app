@@ -1,6 +1,7 @@
 import { SET_COUNTRY, SET_ARTICLES, SET_CURRENT_ARTICLE } from './constants';
 
 export const reducer = (state, { type, payload }) => {
+  console.log(type, payload);
   switch (type) {
     case SET_COUNTRY:
       return { ...state, country: payload };

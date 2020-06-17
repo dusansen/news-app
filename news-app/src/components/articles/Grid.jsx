@@ -13,15 +13,15 @@ const Grid = ({ articles }) => {
 const StyledWrapper = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;
 
   @media only screen and (max-width: 768px) {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1280px) {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
