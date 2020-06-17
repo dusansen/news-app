@@ -1,4 +1,4 @@
-import { axiosClient } from '.';
+import { axiosClient } from './axios';
 import { buildQueryParams } from '../utils/query';
 
 export const fetchHeadlines = async (params) => {
