@@ -12,7 +12,8 @@
   },
   "rules": {
     "quotes": ["error", "single", { "avoidEscape": true }],
-    "jsx-quotes": ["error", "prefer-single"]
+    "jsx-quotes": ["error", "prefer-single"],
+    "max-len": ["error", { "code": 120, "ignoreStrings": true }]
   },
   "globals": {
     "shallow": false
