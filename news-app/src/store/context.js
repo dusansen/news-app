@@ -4,7 +4,8 @@ import { COUNTRIES } from '../utils/constants';
 
 const initialState = {
   country: COUNTRIES[0],
-  articles: {}
+  articles: {},
+  currentArticle: null
 };
 
 const context = createContext(initialState);

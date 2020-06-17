@@ -5,6 +5,7 @@ import AllCategories from './pages/AllCategories';
 import Search from './pages/Search';
 import Header from './components/header/Header';
 import { StateProvider } from './store/context';
+import Article from './pages/Article';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <TopNews path='/' />
         <AllCategories path='/categories' />
         <Search path='/search' />
+        <Article path='/article' />
       </Router>
     </StateProvider>
   );

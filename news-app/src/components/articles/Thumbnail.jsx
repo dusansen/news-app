@@ -1,17 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from '@reach/router';
+import { SET_CURRENT_ARTICLE } from '../../store/constants';
+import { useAppContext } from '../../store/context';
 
-const Thumbnail = ({ article: { title, description, urlToImage } }) => {
+const Thumbnail = ({ article }) => {
+  const { dispatch } = useAppContext();
+  const { title, description, urlToImage } = article;
+
+  const handleMoreClick = () => {
+    dispatch({ type: SET_CURRENT_ARTICLE, payload: article })
+  };
+
   return (
     <StyledWrapper>
       <article>
         <div className='article-title' title={title}>{title}</div>
         <div className='article-image'>
-          <img  src={urlToImage} alt='' />
+          <img src={urlToImage} alt='' />
         </div>
         <div className='article-description'>{description}</div>
-        <Link to={`/${title}`} className='more-link'>More ></Link>
+        <Link
+          to='/article'
+          className='more-link'
+          onClick={handleMoreClick}>More &gt;</Link>
       </article>
     </StyledWrapper>
   );
@@ -22,7 +34,6 @@ const StyledWrapper = styled.article`
   box-shadow: 10px 10px 28px -9px rgba(0,0,0,0.61);
   border: 1px solid var(--secondary-bg-color);
   border-radius: 20px;
-  cursor: pointer;
 
   article {
     display: flex;
@@ -68,6 +79,7 @@ const StyledWrapper = styled.article`
     width: fit-content;
     text-decoration: none;
     color: var(--nav-link-bg-color);
+    cursor: pointer;
   }
 
   .more-link:visited {

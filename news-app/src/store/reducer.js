@@ -1,4 +1,4 @@
-import { SET_COUNTRY, SET_ARTICLES } from './constants';
+import { SET_COUNTRY, SET_ARTICLES, SET_CURRENT_ARTICLE } from './constants';
 
 export const reducer = (state, { type, payload }) => {
   switch (type) {
@@ -16,6 +16,8 @@ export const reducer = (state, { type, payload }) => {
           }
         }
       };
+    case SET_CURRENT_ARTICLE:
+      return { ...state, currentArticle: payload };
     default:
       return state;
   }

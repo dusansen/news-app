@@ -1,2 +1,3 @@
 export const SET_COUNTRY = 'SET_COUNTRY';
 export const SET_ARTICLES = 'SET_ARTICLES';
+export const SET_CURRENT_ARTICLE = 'SET_CURRENT_ARTICLE';
