@@ -3,7 +3,8 @@ import { reducer } from './reducer';
 import { COUNTRIES } from '../utils/constants';
 
 const initialState = {
-  country: COUNTRIES[0]
+  country: COUNTRIES[0],
+  headlines: {}
 };
 
 const context = createContext(initialState);
