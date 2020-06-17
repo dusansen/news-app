@@ -1,25 +1,33 @@
 import { useAppContext } from '../store/context';
-import { fetchHeadlines } from '../api/headlines';
-import { SET_HEADLINES } from '../store/constants';
+import { fetchArticles } from '../api/articles';
+import { SET_ARTICLES } from '../store/constants';
 
 const useApi = () => {
   const { dispatch } = useAppContext();
 
-  const getHeadlines = async params => {
-    const { status, data } = await fetchHeadlines(params);
-    console.log('use api get headlines: ', data);
+  const getArticles = async params => {
+    dispatch({
+      type: SET_ARTICLES,
+      payload: {
+        category: params.category || 'all',
+        data: null,
+        loading: true
+      }
+    });
+    const { status, data } = await fetchArticles(params);
     if (status === 200) {
       dispatch({
-        type: SET_HEADLINES,
+        type: SET_ARTICLES,
         payload: {
           category: params.category || 'all',
-          data: data.articles
+          data: data.articles,
+          loading: false
         }
       });
     }
   }
 
-  return { getHeadlines };
+  return { getArticles };
 };
 
 export default useApi;

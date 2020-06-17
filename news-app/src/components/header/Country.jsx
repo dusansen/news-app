@@ -7,7 +7,7 @@ const Country = ({ country, selected }) => {
   const { dispatch } = useAppContext();
 
   const handleClick = () => {
-    dispatch({ type: SET_COUNTRY, payload: country })
+    dispatch({ type: SET_COUNTRY, payload: country });
   };
 
   return (
