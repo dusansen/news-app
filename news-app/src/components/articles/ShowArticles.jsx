@@ -1,8 +1,9 @@
 import React from 'react';
 import { useAppContext } from '../../store/context';
 import Grid from './Grid';
+import ArticlesCarousel from './ArticlesCarousel';
 
-const ShowArticles = ({ category }) => {
+const ShowArticles = ({ category, type = 'grid' }) => {
   const { state: { articles } } = useAppContext();
   
   const showArticles = () => {
@@ -13,7 +14,9 @@ const ShowArticles = ({ category }) => {
       return <div>LOADING</div>;
     }
     if (articles[category].data && articles[category].data.length) {
-      return <Grid articles={articles[category].data} />;
+      return type === 'grid' ?
+        <Grid articles={articles[category].data} /> : 
+        <ArticlesCarousel articles={articles[category].data} />;
     }
     return <h3>NO RESULTS</h3>;
   };

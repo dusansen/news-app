@@ -6,6 +6,7 @@ import Search from './pages/Search';
 import Header from './components/header/Header';
 import { StateProvider } from './store/context';
 import Article from './pages/Article';
+import CategoryArticles from './pages/CategoryArticles';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <AllCategories path='/categories' />
         <Search path='/search' />
         <Article path='/article' />
+        <CategoryArticles path='category/:category' />
       </Router>
     </StateProvider>
   );

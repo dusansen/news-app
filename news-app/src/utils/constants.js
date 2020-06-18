@@ -11,3 +11,12 @@ export const COUNTRIES = [
 
 export const TOP_ARTICLES_CATEGORY = 'top';
 export const SEARCH_CATEGORY = 'search';
+
+export const CATEGORIES = [
+  'entertainment',
+  'general',
+  'health',
+  'science',
+  'sports',
+  'technology'
+];
