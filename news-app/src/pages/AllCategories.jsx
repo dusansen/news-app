@@ -13,6 +13,7 @@ const AllCategories = () => {
     CATEGORIES.forEach(category =>
       getArticles({ category, country: country.value, pageSize: 5 })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [country]);
 
   return (

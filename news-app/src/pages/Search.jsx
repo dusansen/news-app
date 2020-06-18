@@ -18,6 +18,7 @@ const Search = () => {
         q: searchTerm
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [country, searchTerm]);
 
   const debounceSearch = debounce(event => {

@@ -15,7 +15,7 @@ const Navbar = () => {
 const StyledWrapper = styled.nav`
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: inherit;
 `;
 
 export default Navbar;
