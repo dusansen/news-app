@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RightArrow = ({ color = '#000000', size = 24 }) => {
+const RightArrow = ({ color = '#000000', size = 32 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

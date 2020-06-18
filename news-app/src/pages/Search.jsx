@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useAppContext } from '../store/context';
 import { debounce } from 'debounce';
@@ -7,15 +7,22 @@ import ShowArticles from '../components/articles/ShowArticles';
 import { SEARCH_CATEGORY } from '../utils/constants';
 
 const Search = () => {
+  const [searchTerm, setSearchTerm] = useState('');
   const { state: { country } } = useAppContext();
   const { getArticles } = useApi();
 
+  useEffect(() => {
+    if (searchTerm) {
+      getArticles({
+        country: country.value,
+        q: searchTerm
+      });
+    }
+  }, [country, searchTerm]);
+
   const debounceSearch = debounce(event => {
     const { value } = event.target;
-    getArticles({
-      country: country.value,
-      q: value
-    });
+    setSearchTerm(value);
   }, 500);
 
   const handleChange = event => {
