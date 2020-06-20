@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Context should match context initial state snapshot 1`] = `
+Object {
+  "$$typeof": Symbol(react.context),
+  "Consumer": Object {
+    "$$typeof": Symbol(react.context),
+    "_calculateChangedBits": null,
+    "_context": [Circular],
+  },
+  "Provider": Object {
+    "$$typeof": Symbol(react.provider),
+    "_context": [Circular],
+  },
+  "_calculateChangedBits": null,
+  "_currentRenderer": null,
+  "_currentRenderer2": null,
+  "_currentValue": Object {
+    "articles": Object {},
+    "country": Object {
+      "label": "Great Britain",
+      "value": "GB",
+    },
+    "currentArticle": null,
+  },
+  "_currentValue2": Object {
+    "articles": Object {},
+    "country": Object {
+      "label": "Great Britain",
+      "value": "GB",
+    },
+    "currentArticle": null,
+  },
+  "_threadCount": 0,
+}
+`;

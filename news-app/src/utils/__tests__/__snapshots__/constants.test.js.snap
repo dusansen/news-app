@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Constants utils should match snapshot 1`] = `
+Object {
+  "CATEGORIES": Array [
+    "entertainment",
+    "general",
+    "health",
+    "science",
+    "sports",
+    "technology",
+  ],
+  "COUNTRIES": Array [
+    Object {
+      "label": "Great Britain",
+      "value": "GB",
+    },
+    Object {
+      "label": "United States",
+      "value": "US",
+    },
+  ],
+  "SEARCH_CATEGORY": "search",
+  "TOP_ARTICLES_CATEGORY": "top",
+}
+`;

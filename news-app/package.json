@@ -1,6 +1,7 @@
 {
   "name": "news-app",
   "version": "0.1.0",
+  "author": "Dusan Brnic",
   "private": true,
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.18.9",

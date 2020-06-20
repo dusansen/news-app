@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Store constants should match snapshot 1`] = `
+Object {
+  "SET_ARTICLES": "SET_ARTICLES",
+  "SET_COUNTRY": "SET_COUNTRY",
+  "SET_CURRENT_ARTICLE": "SET_CURRENT_ARTICLE",
+}
+`;
