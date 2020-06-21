@@ -1,5 +1,5 @@
 import { reducer } from '../reducer';
-import { SET_COUNTRY, SET_ARTICLES, SET_CURRENT_ARTICLE } from '../constants';
+import { SET_COUNTRY, SET_ARTICLES, SET_CURRENT_ARTICLE, SET_ERROR_MESSAGE } from '../constants';
 
 describe('Reducer', () => {
   const initialState = {
@@ -59,5 +59,17 @@ describe('Reducer', () => {
     const state = reducer(initialState, action);
 
     expect(state.currentArticle).toEqual(article);
+  });
+
+  it('should save error message to store when SET_ERROR_MESSAGE action occurs', () => {
+    const message = 'message';
+    const action = {
+      type: SET_ERROR_MESSAGE,
+      payload: message
+    };
+
+    const state = reducer(initialState, action);
+
+    expect(state.errorMessage).toEqual(message);
   });
 });

@@ -1,6 +1,6 @@
 import { useAppContext } from '../store/context';
 import { fetchArticles } from '../api/articles';
-import { SET_ARTICLES } from '../store/constants';
+import { SET_ARTICLES, SET_ERROR_MESSAGE } from '../store/constants';
 import { TOP_ARTICLES_CATEGORY, SEARCH_CATEGORY } from '../utils/constants';
 
 const useApi = () => {
@@ -18,15 +18,31 @@ const useApi = () => {
         loading: true
       }
     });
-    const { status, data } = await fetchArticles(params);
-    if (status === 200) {
+    try {
+      const { status, data } = await fetchArticles(params);
+      if (status === 200) {
+        dispatch({
+          type: SET_ARTICLES,
+          payload: {
+            category: articleCategory,
+            data: data.articles,
+            loading: false
+          }
+        });
+        return;
+      }
+    } catch {
       dispatch({
         type: SET_ARTICLES,
         payload: {
           category: articleCategory,
-          data: data.articles,
+          data: [],
           loading: false
         }
+      });
+      dispatch({
+        type: SET_ERROR_MESSAGE,
+        payload: 'Failed while fetching articles'
       });
     }
   }

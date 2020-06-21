@@ -22,6 +22,7 @@ Object {
       "value": "GB",
     },
     "currentArticle": null,
+    "errorMessage": "",
   },
   "_currentValue2": Object {
     "articles": Object {},
@@ -30,6 +31,7 @@ Object {
       "value": "GB",
     },
     "currentArticle": null,
+    "errorMessage": "",
   },
   "_threadCount": 0,
 }

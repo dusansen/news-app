@@ -22,7 +22,7 @@ describe('CategoryArticles page', () => {
   });
   useApi.mockReturnValue({ getArticles });
   it('should fetch articles for category', () => {
-    const wrapper = mount(<CategoryArticles category={category} />);
+    mount(<CategoryArticles category={category} />);
 
     expect(getArticles).toHaveBeenCalledWith({
       category,

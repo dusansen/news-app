@@ -16,6 +16,7 @@
     "max-len": ["error", { "code": 120, "ignoreStrings": true }]
   },
   "globals": {
-    "shallow": false
+    "shallow": false,
+    "mount": false
   }
 }
