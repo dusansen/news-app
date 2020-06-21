@@ -2,6 +2,7 @@ import React from 'react';
 import Thumbnail from '../src/components/articles/Thumbnail';
 import '../src/index.css';
 import Grid from '../src/components/articles/Grid';
+import ArticlesCarousel from '../src/components/articles/ArticlesCarousel';
 
 export default {
   title: 'Articles'
@@ -19,3 +20,5 @@ const articles = Array(10).fill(article);
 export const ArticleThumbnail = () => <Thumbnail article={article} />;
 
 export const ArticlesGrid = () => <Grid articles={articles} />;
+
+export const ArticlesInCarousel = () => <ArticlesCarousel articles={articles} />;
