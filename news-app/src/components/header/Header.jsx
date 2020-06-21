@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import styled from 'styled-components';
-import Countries from './MenuWithCountries';
+import MenuWithCountries from './MenuWithCountries';
 import useWindowSize from '../../hooks/useWindowSize';
 
 const Header = () => {
@@ -19,7 +19,7 @@ const Header = () => {
     <StyledWrapper>
       <header className={`header header-${headerType}`}>
         {headerType === 'horizontal' || expanded ? <Navbar /> : null}
-        <Countries
+        <MenuWithCountries
           showMenu={headerType === 'vertical'}
           toggleMenu={toggleMenu}
           expanded={expanded} />

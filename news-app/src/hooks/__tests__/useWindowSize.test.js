@@ -1,11 +1,5 @@
 import useWindowSize from '../useWindowSize';
-import { renderHook, act } from '@testing-library/react-hooks'
-
-const resizeWindow = (x, y) => {
-  window.innerWidth = x;
-  window.innerHeight = y;
-  window.dispatchEvent(new Event('resize'));
-}
+import { renderHook } from '@testing-library/react-hooks'
 
 describe('useWindowSize hook', () => {
   it('should return window width and height', () => {
